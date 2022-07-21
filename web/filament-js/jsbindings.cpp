@@ -438,6 +438,12 @@ class_<Engine>("Engine")
 
     .function("isAutomaticInstancingEnabled", &Engine::isAutomaticInstancingEnabled)
 
+    .function("getSupportedFeatureLevel", &Engine::getSupportedFeatureLevel)
+
+    .function("setActiveFeatureLevel", &Engine::setActiveFeatureLevel)
+
+    .function("getActiveFeatureLevel", &Engine::getActiveFeatureLevel)
+
     .function("_execute", EMBIND_LAMBDA(void, (Engine* engine), {
         EM_ASM_INT({
             const handle = window.filament_contextHandle;
